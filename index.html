@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bennett Clippers — Boys Varsity Soccer 2026</title>
+<meta name="description" content="Live countdown, full schedule, and results for James M. Bennett boys varsity soccer, fall 2026.">
+<meta name="theme-color" content="#0D0D0F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bennett Clippers Soccer — Fall 2026">
+<meta property="og:description" content="Countdown to the next match, full 12-game schedule, and one-tap calendar sync.">
+<meta property="og:image" content="og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230D0D0F'/><text x='16' y='23' font-size='19' font-family='sans-serif' font-weight='700' fill='%23D6162E' text-anchor='middle'>C</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine:#0D0D0F;        /* Bennett black */
+    --panel:#17171A;
+    --panel2:#121215;
+    --brass:#D6162E;       /* Bennett red */
+    --sail:#F4F2EF;
+    --glass:#9A979E;
+    --line:rgba(244,242,239,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+  body{
+    background:var(--pine);
+    color:var(--sail);
+    font-family:'Barlow',sans-serif;
+    line-height:1.5;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+
+  /* ---------- hero / scoreboard ---------- */
+  header{
+    padding:44px 0 36px;
+    background:
+      radial-gradient(1200px 400px at 50% -200px, rgba(214,22,46,.14), transparent 70%),
+      var(--pine);
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--glass);font-weight:600;margin-bottom:10px;
+  }
+  h1{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(44px,9vw,84px);
+    line-height:.92;
+    letter-spacing:.01em;
+    color:var(--sail);
+  }
+  h1 .gold{color:var(--brass)}
+  .sub{color:var(--glass);margin-top:10px;font-size:16px}
+
+  .board{
+    margin-top:30px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px 24px;
+    display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between;
+  }
+  .board .label{
+    font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);font-weight:700;margin-bottom:6px;
+  }
+  .board .match{font-size:20px;font-weight:600}
+  .board .meta{color:var(--glass);font-size:14px;margin-top:2px}
+  .clock{display:flex;gap:14px;text-align:center}
+  .clock .cell b{
+    display:block;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:46px;line-height:1;
+    color:var(--brass);
+    min-width:56px;
+    background:var(--panel2);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:8px 6px 4px;
+  }
+  .clock .cell span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--glass)}
+
+  /* ---------- controls ---------- */
+  .controls{
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+    padding:22px 0 6px;
+  }
+  .chip{
+    background:transparent;color:var(--sail);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:7px 18px;font-size:14px;font-weight:600;font-family:'Barlow',sans-serif;
+    cursor:pointer;
+  }
+  .chip[aria-pressed="true"]{background:var(--brass);color:#fff;border-color:var(--brass)}
+  .chip:focus-visible,.btn:focus-visible,.icsbtn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  .controls .spacer{flex:1}
+  .btn{
+    background:var(--brass);color:#fff;
+    border:none;border-radius:8px;
+    padding:9px 16px;font-size:14px;font-weight:700;font-family:'Barlow',sans-serif;
+    cursor:pointer;
+  }
+
+  /* ---------- schedule ---------- */
+  .games{list-style:none;padding:14px 0 60px}
+  .game{
+    display:grid;
+    grid-template-columns:86px 1fr auto;
+    gap:16px;align-items:center;
+    padding:16px 18px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    margin-bottom:10px;
+    background:var(--panel2);
+  }
+  .game.next{border-color:var(--brass);box-shadow:0 0 0 1px var(--brass) inset}
+  .date{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:30px;line-height:1;color:var(--sail);
+  }
+  .date small{display:block;font-family:'Barlow',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--glass);margin-top:3px}
+  .opp{font-size:17px;font-weight:600}
+  .venue{font-size:13px;color:var(--glass);margin-top:2px}
+  .tag{
+    display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    border-radius:4px;padding:2px 8px;margin-right:8px;vertical-align:1px;
+  }
+  .tag.home{background:var(--brass);color:#fff}
+  .tag.away{background:transparent;color:var(--glass);border:1px solid var(--line)}
+  .right{text-align:right}
+  .time{font-size:15px;font-weight:600}
+  .wl{display:inline-block;font-size:12px;font-weight:800;border-radius:4px;padding:1px 7px;margin-right:5px}
+  .wl.w{background:var(--brass);color:#fff}
+  .wl.l{background:transparent;color:var(--glass);border:1px solid var(--line)}
+  .wl.d{background:var(--panel);color:var(--sail)}
+  .record{font-size:14px;color:var(--glass);font-weight:600}
+  .record b{color:var(--sail);font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.03em}
+  .icsbtn{
+    display:inline-block;margin-top:6px;
+    background:none;border:1px solid var(--line);color:var(--glass);
+    border-radius:6px;padding:4px 10px;font-size:12px;font-weight:600;font-family:'Barlow',sans-serif;cursor:pointer;
+  }
+  .icsbtn:hover{color:var(--sail);border-color:var(--glass)}
+  footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--glass);font-size:13px}
+  @media(max-width:560px){
+    .game{grid-template-columns:64px 1fr;grid-template-rows:auto auto}
+    .right{grid-column:1/-1;text-align:left;display:flex;gap:12px;align-items:center}
+    .icsbtn{margin-top:0}
+    .board{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">James M. Bennett Senior High School</p>
+    <h1>Clippers <span class="gold">Soccer</span></h1>
+    <p class="sub">Boys Varsity &middot; Fall 2026 &middot; Home matches at the Shipyard</p>
+
+    <div class="board" id="board">
+      <div>
+        <div class="label" id="boardLabel">Next match</div>
+        <div class="match" id="boardMatch">—</div>
+        <div class="meta" id="boardMeta">—</div>
+      </div>
+      <div class="clock" id="clock" aria-label="Countdown to next match">
+        <div class="cell"><b id="d">0</b><span>Days</span></div>
+        <div class="cell"><b id="h">0</b><span>Hrs</span></div>
+        <div class="cell"><b id="m">0</b><span>Min</span></div>
+        <div class="cell"><b id="s">0</b><span>Sec</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="controls" role="group" aria-label="Filter schedule">
+    <button class="chip" aria-pressed="true" data-filter="all">All 12</button>
+    <button class="chip" aria-pressed="false" data-filter="home">Shipyard</button>
+    <button class="chip" aria-pressed="false" data-filter="away">Away</button>
+    <span class="spacer"></span>
+    <span class="record" id="record"></span>
+    <button class="btn" id="seasonIcs">Add full season to calendar</button>
+  </div>
+
+  <ul class="games" id="games"></ul>
+</main>
+
+<footer>
+  <div class="wrap">Fan-run schedule page — not affiliated with James M. Bennett High School or Wicomico County Public Schools. Schedule subject to change. Times Eastern. &middot; Go Clippers.</div>
+</footer>
+
+<script>
+// After each match, fill in result, e.g. result:{us:3, them:1}
+const GAMES = [
+  {date:'2026-09-04', time:'16:00', opp:'Washington High School',        home:true,  venue:'Shipyard', result:null},
+  {date:'2026-09-07', time:'17:45', opp:'North Caroline High School',    home:false, venue:'North Caroline High School', result:null},
+  {date:'2026-09-09', time:'16:00', opp:'Pocomoke High School',          home:false, venue:'Pocomoke High School', result:null},
+  {date:'2026-09-14', time:'16:00', opp:'Crisfield High School',         home:true,  venue:'Shipyard', result:null},
+  {date:'2026-09-16', time:'16:00', opp:'Queen Annes County High School',home:true,  venue:'Shipyard', result:null},
+  {date:'2026-09-23', time:'16:00', opp:'Snow Hill High School',         home:false, venue:'SH-Kelly Shumate Stadium', result:null},
+  {date:'2026-09-28', time:'16:00', opp:'Easton High School',            home:false, venue:'Warrior Stadium', result:null},
+  {date:'2026-09-30', time:'16:00', opp:'Wicomico High School',          home:true,  venue:'Shipyard', result:null},
+  {date:'2026-10-05', time:'16:00', opp:'Mardela High School',           home:false, venue:'MMHS Soccer Stadium', result:null},
+  {date:'2026-10-07', time:'16:00', opp:'Kent Island High School',       home:true,  venue:'Shipyard', result:null},
+  {date:'2026-10-12', time:'17:30', opp:'Stephen Decatur High School',   home:false, venue:'Louis H. Taylor Stadium', result:null},
+  {date:'2026-10-14', time:'16:00', opp:'Parkside High School',          home:true,  venue:'Shipyard', result:null},
+];
+// All fall dates are EDT (UTC-4)
+GAMES.forEach(g => g.start = new Date(g.date + 'T' + g.time + ':00-04:00'));
+
+const MONTHS = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+const fmtTime = d => d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});
+const fmtDay  = d => d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'America/New_York'});
+
+function nextGame(){
+  const now = Date.now();
+  return GAMES.find(g => g.start.getTime() + 2*60*60*1000 > now); // still "next" until ~2h after kickoff
+}
+
+/* ---------- render list ---------- */
+const list = document.getElementById('games');
+function render(filter){
+  list.innerHTML = '';
+  const nxt = nextGame();
+  GAMES.forEach((g,i) => {
+    if(filter==='home' && !g.home) return;
+    if(filter==='away' && g.home) return;
+    const d = g.start;
+    const li = document.createElement('li');
+    li.className = 'game' + (g===nxt ? ' next' : '');
+    li.innerHTML = `
+      <div class="date">${d.getUTCDate() /*placeholder*/}</div>
+      <div>
+        <div class="opp"><span class="tag ${g.home?'home':'away'}">${g.home?'Home':'Away'}</span>${g.home?'':'@ '}${g.opp}</div>
+        <div class="venue">${g.venue}</div>
+      </div>
+      <div class="right">
+        ${g.result
+          ? `<div class="time"><span class="wl ${g.result.us>g.result.them?'w':g.result.us<g.result.them?'l':'d'}">${g.result.us>g.result.them?'W':g.result.us<g.result.them?'L':'D'}</span> ${g.result.us}–${g.result.them}</div>`
+          : `<div class="time">${fmtTime(d)}</div>
+             <button class="icsbtn" data-i="${i}">+ Calendar</button>`}
+      </div>`;
+    // proper date cell using ET parts
+    const parts = new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',month:'numeric',day:'numeric'}).formatToParts(d);
+    const mo = +parts.find(p=>p.type==='month').value, da = +parts.find(p=>p.type==='day').value;
+    li.querySelector('.date').innerHTML = da + '<small>' + MONTHS[mo-1] + '</small>';
+    list.appendChild(li);
+  });
+}
+function showRecord(){
+  const played = GAMES.filter(g => g.result);
+  const el = document.getElementById('record');
+  if(!played.length){ el.textContent = ''; return; }
+  const w = played.filter(g => g.result.us > g.result.them).length;
+  const l = played.filter(g => g.result.us < g.result.them).length;
+  const d = played.length - w - l;
+  el.innerHTML = 'Record <b>' + w + '–' + l + (d ? '–' + d : '') + '</b>';
+}
+
+render('all');
+showRecord();
+
+document.querySelectorAll('.chip').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed','false'));
+    btn.setAttribute('aria-pressed','true');
+    render(btn.dataset.filter);
+  });
+});
+
+/* ---------- countdown board ---------- */
+function tick(){
+  const g = nextGame();
+  const label = document.getElementById('boardLabel');
+  const match = document.getElementById('boardMatch');
+  const meta  = document.getElementById('boardMeta');
+  if(!g){
+    label.textContent = 'Season complete';
+    match.textContent = 'Thanks for a great fall, Clippers fans';
+    meta.textContent = '';
+    document.getElementById('clock').style.display = 'none';
+    return;
+  }
+  const diff = g.start.getTime() - Date.now();
+  if(diff <= 0){
+    label.textContent = 'Match day';
+    match.textContent = (g.home?'vs ':'at ') + g.opp;
+    meta.textContent = 'Kicked off ' + fmtTime(g.start) + ' · ' + g.venue;
+    document.getElementById('clock').style.display = 'none';
+    return;
+  }
+  label.textContent = 'Next match';
+  match.textContent = (g.home?'vs ':'at ') + g.opp;
+  meta.textContent = fmtDay(g.start) + ' · ' + fmtTime(g.start) + ' · ' + g.venue;
+  const s = Math.floor(diff/1000);
+  document.getElementById('d').textContent = Math.floor(s/86400);
+  document.getElementById('h').textContent = Math.floor(s%86400/3600);
+  document.getElementById('m').textContent = Math.floor(s%3600/60);
+  document.getElementById('s').textContent = s%60;
+}
+tick();
+setInterval(tick, 1000);
+
+/* ---------- ICS calendar export ---------- */
+function pad(n){return String(n).padStart(2,'0')}
+function icsDate(d){
+  return d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate())+'T'+pad(d.getUTCHours())+pad(d.getUTCMinutes())+'00Z';
+}
+function buildIcs(games){
+  const lines = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Clippers Soccer//EN'];
+  games.forEach((g,i) => {
+    const end = new Date(g.start.getTime() + 2*60*60*1000);
+    lines.push('BEGIN:VEVENT',
+      'UID:clippers-2026-'+i+'@bennett-soccer',
+      'DTSTAMP:'+icsDate(new Date()),
+      'DTSTART:'+icsDate(g.start),
+      'DTEND:'+icsDate(end),
+      'SUMMARY:Clippers Soccer '+(g.home?'vs ':'at ')+g.opp,
+      'LOCATION:'+g.venue,
+      'END:VEVENT');
+  });
+  lines.push('END:VCALENDAR');
+  return lines.join('\r\n');
+}
+function downloadIcs(games, name){
+  const blob = new Blob([buildIcs(games)], {type:'text/calendar'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+document.getElementById('seasonIcs').addEventListener('click', () => downloadIcs(GAMES,'clippers-soccer-2026.ics'));
+list.addEventListener('click', e => {
+  const b = e.target.closest('.icsbtn');
+  if(b) downloadIcs([GAMES[+b.dataset.i]], 'clippers-game.ics');
+});
+</script>
+</body>
+</html>

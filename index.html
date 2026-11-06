@@ -1,42 +1,346 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sanguinetti Football Universe | Simulation</title><style>
-:root{--bg:#071411;--panel:#10231e;--panel2:#152e27;--line:#2a493d;--text:#eff9f2;--muted:#9ab5a7;--gold:#eac568;--green:#36ce82;--red:#f07979}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#174531 0,transparent 40%),var(--bg);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,sans-serif}header{border-bottom:1px solid var(--line);padding:20px max(22px,calc((100vw - 1320px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:#0b1c17e8}.brand{display:flex;gap:14px;align-items:center}.crest{width:55px;height:62px;display:grid;place-items:center;clip-path:polygon(50% 0,94% 15%,90% 76%,50% 100%,10% 76%,6% 15%);background:linear-gradient(140deg,var(--gold),#11734c);color:#071b12;font-weight:1000;font-size:22px;border:2px solid #fff}.eyebrow{color:var(--gold);letter-spacing:2px;font-size:11px;font-weight:800;text-transform:uppercase}h1{margin:2px 0;font-size:25px;letter-spacing:-.6px}small,.muted{color:var(--muted)}.shell{max-width:1320px;margin:auto;padding:25px 20px 80px}.nav{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 24px}.nav button{border:1px solid var(--line);background:#10231e;color:var(--muted);padding:12px 17px;border-radius:10px;cursor:pointer;font-weight:750}.nav button.active{background:var(--green);color:#062217;border-color:var(--green)}button,select,input{font:inherit}button{cursor:pointer}button.primary{background:var(--gold);color:#13231a;border:0;border-radius:10px;padding:12px 16px;font-weight:850}button.secondary{background:#224e3a;color:#fff;border:1px solid #3b7257;border-radius:10px;padding:11px 14px;font-weight:750}button.danger{background:#522e2e;color:#fff;border:1px solid #8e4d4d;border-radius:10px;padding:10px 14px}button:disabled{opacity:.4;cursor:not-allowed}select,input{background:#0a1c16;border:1px solid #47705b;color:white;border-radius:9px;padding:11px;max-width:100%}.hero{padding:24px 26px;background:linear-gradient(115deg,#17613f,#102e27 65%,#142c23);border:1px solid #3b805b;border-radius:18px;margin-bottom:20px;display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.hero h2{font-size:29px;margin:6px 0}.hero p{color:#c7dfd0;max-width:650px;margin:6px 0}.actions{display:flex;gap:9px;flex-wrap:wrap}.grid{display:grid;grid-template-columns:1.25fr .85fr;gap:20px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:20px;margin-bottom:18px;min-width:0}.card h3{margin:0 0 15px;font-size:18px}.metric{background:#16372a;border:1px solid #2b5a42;border-radius:12px;padding:16px}.metric strong{display:block;font-size:26px;color:var(--gold)}.metric span{color:var(--muted);font-size:12px}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);text-align:left}td,th{padding:10px 9px;border-bottom:1px solid #254337}tr:last-child td{border:0}td.num,th.num{text-align:right}tr.focus{background:#1c4432}tr.champ td:first-child{border-left:3px solid var(--gold)}.teammark{width:22px;height:22px;display:inline-grid;place-items:center;border-radius:50%;color:#05170f;font-size:10px;font-weight:900;margin-right:8px;vertical-align:middle}.match{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;padding:12px 0;border-bottom:1px solid #254337}.match:last-child{border:0}.match .right{text-align:right}.score{background:#1b4432;padding:7px 11px;border-radius:7px;color:var(--gold);font-weight:900;min-width:64px;text-align:center}.event{padding:9px 12px;border-left:3px solid var(--green);background:#153126;margin:9px 0;border-radius:0 8px 8px 0}.pill{display:inline-block;background:#234c39;border-radius:100px;color:#b7e5c9;padding:5px 10px;font-size:12px;font-weight:800}.player{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:10px 0}.player:last-child{border:0}.player .rating{color:var(--gold);font-weight:900}.bar{height:7px;border-radius:5px;background:#31503f;overflow:hidden;margin-top:7px}.bar i{display:block;height:100%;background:var(--green)}.formrow{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin-bottom:15px}.formrow label{display:flex;flex-direction:column;gap:7px;color:var(--muted);font-size:12px;font-weight:800}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.notice{padding:14px;border:1px solid #577344;border-radius:12px;background:#253524;color:#e8e0b1}.hidden{display:none}.footer{text-align:center;color:var(--muted);margin-top:30px;font-size:12px}#toast{position:fixed;bottom:24px;right:24px;background:#d4edb4;color:#102519;padding:13px 18px;border-radius:10px;font-weight:800;box-shadow:0 15px 50px #0008;display:none;max-width:350px;z-index:10}@media(max-width:800px){.grid,.grid3,.two{grid-template-columns:1fr}.hero h2{font-size:23px}.shell{padding:16px 12px}.card{padding:15px}.match{font-size:13px}header{padding:15px}}
-</style></head><body><header><div class="brand"><div class="crest">SYC</div><div><div class="eyebrow">Clarendon • Jamaica</div><h1>Sanguinetti Football Universe</h1><small>12-club interactive league simulation · Fictional prototype</small></div></div><div class="actions"><span class="pill" id="topSeason"></span><button class="secondary" onclick="exportSave()">Export Save</button><button class="secondary" onclick="document.getElementById('importFile').click()">Import Save</button><input type="file" id="importFile" accept="application/json" class="hidden" onchange="importSave(event)"></div></header><main class="shell"><nav class="nav" id="nav"></nav><section id="content"></section><div class="footer">Sanguinetti Youth Club • Independent fictional football simulation • Autosaves in this browser</div></main><div id="toast"></div><script>
-'use strict';
-const KEY='syc-football-v1',NAMES=['Emerald Warriors FC','Golden Roots FC','Sanguinetti United','Clarendon Lions FC','Spaldings Athletic','Frankfield Rovers','May Pen City FC','Chapelton Stars','Kellits Rangers','Crofts Hill FC','Rock River United','Four Paths Eagles'];
-const COLORS=['#25cb79','#dfba51','#5da4e4','#ef8d58','#8e92eb','#de7995','#55c6c4','#d1e17a','#a1bd85','#efc0a0','#aa85df','#6bc09a'];
-const FIRST=['Andre','Malik','Dwayne','Ricardo','Jamal','Kemar','Dario','Omar','Shamar','Devonte','Tariq','Romaine','Kadeem','Jermaine','Damar','Tyrese','Nathan','Leon','Rohan','Micah','Keshawn','Akeem','Tyrell','Deshawn'];
-const LAST=['Brown','Williams','Campbell','Johnson','Clarke','Thompson','Reid','Morgan','Davis','Grant','Henry','Lewis','Bennett','Robinson','McKenzie','Gordon','Smith','Francis','Wilson','Stewart'];
-let state,tab='Overview',selectedClub=0,viewWeek=0;
-function rng(seed){let x=seed>>>0;return()=>{x=(1664525*x+1013904223)>>>0;return x/4294967296}}
-function rand(r,a,b){return Math.floor(r()*(b-a+1))+a}function money(n){return 'J$'+Math.round(n).toLocaleString('en-JM')}
-function makeSchedule(n){let teams=Array.from({length:n},(_,i)=>i),rounds=[];for(let round=0;round<n-1;round++){let games=[];for(let j=0;j<n/2;j++){let a=teams[j],b=teams[n-1-j];games.push(round%2===0?[a,b]:[b,a])}rounds.push(games);teams=[teams[0],teams[n-1],...teams.slice(1,n-1)]}return [...rounds,...rounds.map(w=>w.map(([a,b])=>[b,a]))].map((games,week)=>games.map(([home,away])=>({id:`${week}-${home}-${away}`,week,home,away,score:null,events:[],stats:null})))}
-function createGame(){let r=rng(20261026),clubs=NAMES.map((name,id)=>{let players=Array.from({length:20},(_,p)=>({id:id*100+p,name:FIRST[rand(r,0,FIRST.length-1)]+' '+LAST[rand(r,0,LAST.length-1)],position:p<2?'GK':p<8?'DEF':p<14?'MID':'FWD',rating:rand(r,47,76)+(id===0?3:0),potential:rand(r,72,95),age:rand(r,17,31),goals:0,assists:0}));return {id,name,color:COLORS[id],players,cash:id===0?2500000:rand(r,1400000,3500000),morale:rand(r,66,84),fitness:100,tactics:'Balanced',training:'Balanced',stadium:1,bus:1,academy:1,sponsor:rand(r,300000,800000),reputation:rand(r,30,60),history:[]}});return {version:1,season:2026,week:0,clubs,fixtures:makeSchedule(12),log:['Welcome to the Sanguinetti Football Universe. Season 2026 is ready.'],champions:[],manager:0,seed:20261026,completed:false}}
-function load(){try{let v=JSON.parse(localStorage.getItem(KEY));state=v&&v.version===1&&v.clubs?.length===12?v:createGame()}catch(e){state=createGame()}selectedClub=state.manager;viewWeek=Math.min(state.week,21)}function save(){localStorage.setItem(KEY,JSON.stringify(state))}
-function notify(s){let t=document.getElementById('toast');t.textContent=s;t.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display='none',3500)}
-function standings(){let rows=state.clubs.map(c=>({id:c.id,name:c.name,color:c.color,p:0,w:0,d:0,l:0,gf:0,ga:0,pts:0}));state.fixtures.flat().filter(f=>f.score).forEach(f=>{let h=rows[f.home],a=rows[f.away],x=f.score[0],y=f.score[1];h.p++;a.p++;h.gf+=x;h.ga+=y;a.gf+=y;a.ga+=x;if(x>y){h.w++;a.l++;h.pts+=3}else if(x<y){a.w++;h.l++;a.pts+=3}else{h.d++;a.d++;h.pts++;a.pts++}});return rows.sort((a,b)=>b.pts-a.pts||(b.gf-b.ga)-(a.gf-a.ga)||b.gf-a.gf||a.name.localeCompare(b.name))}
-function teamPower(c){let top=[...c.players].sort((a,b)=>b.rating-a.rating).slice(0,11);let avg=top.reduce((s,p)=>s+p.rating,0)/11;return avg+(c.morale-70)*.11+(c.fitness-80)*.06+(c.tactics==='Attacking'?1:c.tactics==='Defensive'?.5:0)+c.stadium*.3}
-function poisson(r,lambda){let l=Math.exp(-lambda),p=1,k=0;do{k++;p*=r()}while(p>l&&k<15);return k-1}
-function simulate(f){let home=state.clubs[f.home],away=state.clubs[f.away],r=rng((state.seed+state.season*7919+f.week*127+f.home*173+f.away*263)>>>0);let diff=teamPower(home)-teamPower(away);let attack=home.tactics==='Attacking'?.17:home.tactics==='Defensive'?-.16:0;let defend=away.tactics==='Attacking'?.17:away.tactics==='Defensive'?-.16:0;let hx=Math.max(.2,1.35+diff*.04+attack-defend),ax=Math.max(.2,1.1-diff*.04+defend-attack);let h=Math.min(8,poisson(r,hx)),a=Math.min(8,poisson(r,ax));let events=[];for(let [club,num] of [[home,h],[away,a]]){let scorers=club.players.filter(p=>p.position!=='GK');for(let k=0;k<num;k++){let p=scorers[rand(r,0,scorers.length-1)];p.goals++;events.push({minute:rand(r,1,90),club:club.id,player:p.name,type:'Goal'})}}events.sort((a,b)=>a.minute-b.minute);f.score=[h,a];f.events=events;f.stats={homeShots:Math.max(h,rand(r,5,16)),awayShots:Math.max(a,rand(r,4,15)),homePossession:Math.min(72,Math.max(28,Math.round(50+diff*.7+rand(r,-12,12))))};home.fitness=Math.max(65,home.fitness-rand(r,2,5));away.fitness=Math.max(65,away.fitness-rand(r,2,5));home.morale=Math.max(35,Math.min(100,home.morale+(h>a?3:h<a?-3:0)));away.morale=Math.max(35,Math.min(100,away.morale+(a>h?3:a<h?-3:0)));for(let c of [home,away]){c.cash+=Math.round((c.sponsor/22)+(c.id===f.home?rand(r,12000,42000):0)-rand(r,13000,32000));c.fitness=Math.min(100,c.fitness+2)}}
-function playWeek(){if(state.week>=22)return;let w=state.week;state.fixtures[w].forEach(simulate);state.week++;viewWeek=w;let focus=state.fixtures[w].find(f=>f.home===state.manager||f.away===state.manager);state.log.unshift(`Matchweek ${w+1}: ${state.clubs[focus.home].name} ${focus.score[0]}–${focus.score[1]} ${state.clubs[focus.away].name}`);if(state.week===22){state.completed=true;let champ=standings()[0];state.champions.push({season:state.season,club:champ.name});state.log.unshift(`🏆 ${champ.name} are ${state.season} champions!`)}save();render();notify(state.week===22?'Season complete! View the champion and start a new season.':`Matchweek ${w+1} completed`)}
-function nextSeason(){if(!state.completed)return;let r=rng(state.seed+state.season);state.clubs.forEach(c=>{c.history.push({season:state.season,position:standings().findIndex(x=>x.id===c.id)+1});c.players.forEach(p=>{p.age++;p.rating=Math.max(40,Math.min(95,p.rating+(p.age<26&&p.rating<p.potential?rand(r,0,2):p.age>31?-rand(r,0,2):0)));p.goals=0;p.assists=0});c.morale=75;c.fitness=100;c.cash+=c.sponsor;c.cash-=c.players.length*35000;c.reputation=Math.max(15,Math.min(100,c.reputation+rand(r,-2,3))) });state.season++;state.week=0;state.fixtures=makeSchedule(12);state.completed=false;state.seed+=991;viewWeek=0;state.log.unshift(`Season ${state.season} has begun.`);save();render();notify('New season started')}
-function tableHTML(){let rows=standings();return `<div class="tablewrap"><table><thead><tr><th>#</th><th>Club</th><th class="num">P</th><th class="num">W</th><th class="num">D</th><th class="num">L</th><th class="num">GD</th><th class="num">Pts</th></tr></thead><tbody>${rows.map((x,i)=>`<tr class="${x.id===state.manager?'focus':''} ${i===0?'champ':''}"><td>${i+1}</td><td><span class="teammark" style="background:${x.color}">${x.name[0]}</span>${x.name}</td><td class="num">${x.p}</td><td class="num">${x.w}</td><td class="num">${x.d}</td><td class="num">${x.l}</td><td class="num">${x.gf-x.ga>0?'+':''}${x.gf-x.ga}</td><td class="num"><b>${x.pts}</b></td></tr>`).join('')}</tbody></table></div>`}
-function matchesHTML(week){return state.fixtures[week].map(f=>`<div class="match"><div class="right">${state.clubs[f.home].name}</div><div class="score">${f.score?f.score.join(' – '):'vs'}</div><div>${state.clubs[f.away].name}</div></div>`).join('')}
-function weekPicker(){return `<div class="formrow"><label>Matchweek<select onchange="viewWeek=+this.value;render()">${state.fixtures.map((_,i)=>`<option value="${i}" ${viewWeek===i?'selected':''}>Round ${i+1}${i<state.week?' • Played':''}</option>`).join('')}</select></label></div>`}
-function overview(){let focus=state.clubs[state.manager],rank=standings().findIndex(x=>x.id===state.manager)+1;return `<section class="hero"><div><div class="eyebrow">Season ${state.season} · ${state.completed?'Completed':'Matchweek '+(state.week+1)+' of 22'}</div><h2>${state.completed?'🏆 Season Complete':'The Road to Glory Starts Here'}</h2><p>Manage your club, develop Jamaican football talent, and guide the 12-team competition through 132 fixtures.</p></div><div class="actions">${state.completed?`<button class="primary" onclick="nextSeason()">Start Season ${state.season+1} →</button>`:`<button class="primary" onclick="playWeek()">▶ Simulate Matchweek ${state.week+1}</button>`}<button class="secondary" onclick="setTab('Fixtures')">View Fixtures</button></div></section><div class="grid3"><div class="metric"><strong>${rank}<small> / 12</small></strong><span>${focus.name} league position</span></div><div class="metric"><strong>${state.week}<small> / 22</small></strong><span>Completed matchweeks</span></div><div class="metric"><strong>${money(focus.cash)}</strong><span>Club cash balance</span></div></div><div class="grid" style="margin-top:20px"><div class="card"><h3>Premier Division Standings</h3>${tableHTML()}</div><div><div class="card"><h3>${state.week===0?'Opening':'Latest'} Matchweek</h3>${matchesHTML(Math.max(0,state.week-1))}</div><div class="card"><h3>League News</h3>${state.log.slice(0,5).map(l=>`<div class="event">${l}</div>`).join('')}</div></div></div>`}
-function fixturesPage(){return `<div class="hero"><div><div class="eyebrow">League Calendar</div><h2>Fixtures & Results</h2><p>22 matchweeks · 6 matches each · 132 fixtures per season.</p></div><div class="actions">${!state.completed?`<button class="primary" onclick="playWeek()">▶ Play Next Round</button><button class="secondary" onclick="playAll()">Simulate Full Season</button>`:''}</div></div><div class="grid"><div class="card"><h3>Matchweek ${viewWeek+1}</h3>${weekPicker()}${matchesHTML(viewWeek)}</div><div class="card"><h3>Match Details</h3>${state.fixtures[viewWeek].filter(f=>f.score).map(f=>`<details style="padding:12px 0;border-bottom:1px solid var(--line)"><summary style="cursor:pointer;font-weight:750">${state.clubs[f.home].name} ${f.score.join('–')} ${state.clubs[f.away].name}</summary><div class="muted" style="padding:10px 0">Shots: ${f.stats.homeShots}–${f.stats.awayShots} · Possession: ${f.stats.homePossession}%–${100-f.stats.homePossession}%</div>${f.events.length?f.events.map(e=>`<div class="event">${e.minute}' ⚽ ${e.player} — ${state.clubs[e.club].name}</div>`).join(''):'<p class="muted">No goals scored.</p>'}</details>`).join('')||'<p class="muted">Simulate this matchweek to see scores, goalscorers and match statistics.</p>'}</div></div>`}
-function playAll(){if(!confirm('Simulate every remaining matchweek in this season?'))return;while(state.week<22)playWeekSilent();viewWeek=21;save();render();notify('Full season simulated')}
-function playWeekSilent(){let w=state.week;state.fixtures[w].forEach(simulate);state.week++;if(state.week===22){state.completed=true;let champ=standings()[0];state.champions.push({season:state.season,club:champ.name});state.log.unshift(`🏆 ${champ.name} are ${state.season} champions!`)}}
-function clubsPage(){return `<div class="hero"><div><div class="eyebrow">12 Independent Clubs</div><h2>League Club Directory</h2><p>Choose a club to inspect its squad, finances and infrastructure. Manage any club as commissioner.</p></div></div><div class="grid3">${state.clubs.map(c=>`<div class="card" style="border-top:4px solid ${c.color}"><div class="teammark" style="width:46px;height:46px;font-size:20px;background:${c.color}">${c.name[0]}</div><h3 style="margin:13px 0 6px">${c.name}</h3><div class="muted">Squad: ${c.players.length} · Strength: ${teamPower(c).toFixed(1)}</div><p class="muted">Budget: ${money(c.cash)}</p><div class="actions"><button class="secondary" onclick="selectedClub=${c.id};setTab('Club HQ')">View Club</button><button class="primary" onclick="manage(${c.id})">${state.manager===c.id?'Managing ✓':'Manage Club'}</button></div></div>`).join('')}</div>`}
-function manage(id){state.manager=id;selectedClub=id;save();setTab('Club HQ');notify('Now managing '+state.clubs[id].name)}
-function clubPage(){let c=state.clubs[selectedClub],s=[...c.players].sort((a,b)=>b.rating-a.rating);return `<div class="hero" style="border-color:${c.color}"><div><div class="eyebrow">Club Headquarters · ${state.manager===c.id?'Your Club':'League Club'}</div><h2>${c.name}</h2><p>Club power ${teamPower(c).toFixed(1)} · Reputation ${c.reputation}/100 · Stadium Level ${c.stadium}</p></div><div class="actions">${state.manager!==c.id?`<button class="primary" onclick="manage(${c.id})">Take Control</button>`:''}<select onchange="selectedClub=+this.value;render()">${state.clubs.map(x=>`<option value="${x.id}" ${x.id===selectedClub?'selected':''}>${x.name}</option>`).join('')}</select></div></div><div class="grid3"><div class="metric"><strong>${money(c.cash)}</strong><span>Club funds</span></div><div class="metric"><strong>${c.morale}%</strong><span>Squad morale</span></div><div class="metric"><strong>${c.fitness}%</strong><span>Team fitness</span></div></div><div class="grid" style="margin-top:20px"><div class="card"><h3>First-Team Squad</h3>${s.map(p=>`<div class="player"><div><b>${p.name}</b><div class="muted">${p.position} · Age ${p.age} · Goals ${p.goals}</div></div><span class="pill">${p.position}</span><span class="rating">${p.rating}</span></div>`).join('')}</div><div><div class="card"><h3>Tactics & Training</h3><div class="formrow"><label>Match Tactics<select ${state.manager!==c.id?'disabled':''} onchange="updateClub(${c.id},'tactics',this.value)">${['Balanced','Attacking','Defensive'].map(x=>`<option ${c.tactics===x?'selected':''}>${x}</option>`).join('')}</select></label><label>Training Focus<select ${state.manager!==c.id?'disabled':''} onchange="updateClub(${c.id},'training',this.value)">${['Balanced','Fitness','Technical','Youth'].map(x=>`<option ${c.training===x?'selected':''}>${x}</option>`).join('')}</select></label></div><p class="muted">Tactics affect match probabilities. Training focus is recorded for future player-development updates.</p></div><div class="card"><h3>Club Facilities</h3>${[['Stadium','stadium',750000],['Academy','academy',400000],['Team Bus','bus',350000]].map(([label,key,price])=>`<div style="padding:13px 0;border-bottom:1px solid var(--line)"><b>${label} · Level ${c[key]}</b><div class="muted" style="margin:6px 0">Next upgrade: ${money(price*c[key])}</div><button class="secondary" ${state.manager!==c.id||c.cash<price*c[key]||c[key]>=5?'disabled':''} onclick="upgrade(${c.id},'${key}',${price})">Upgrade</button></div>`).join('')}</div><div class="card"><h3>Rename Club</h3><div class="formrow"><label>Club Name<input id="rename" maxlength="45" value="${escapeHtml(c.name)}" ${state.manager!==c.id?'disabled':''}></label><button class="secondary" ${state.manager!==c.id?'disabled':''} onclick="renameClub(${c.id})">Save Name</button></div><p class="muted">The founding identities can be retained while placeholder clubs are renamed.</p></div></div></div>`}
-function escapeHtml(s){return s.replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
-function updateClub(id,key,value){if(state.manager!==id)return;state.clubs[id][key]=value;save();notify(key+' updated')}
-function upgrade(id,key,price){if(state.manager!==id)return;let c=state.clubs[id],cost=price*c[key];if(c.cash<cost||c[key]>=5)return;c.cash-=cost;c[key]++;if(key==='academy')c.players.forEach(p=>{if(p.age<23&&p.rating<p.potential)p.rating=Math.min(p.potential,p.rating+1)});save();render();notify('Upgrade complete: '+key+' level '+c[key])}
-function renameClub(id){if(state.manager!==id)return;let value=document.getElementById('rename').value.trim();if(value.length<3)return notify('Name must be at least 3 characters');state.clubs[id].name=value;save();render();notify('Club renamed')}
-function recordsPage(){let goals=state.clubs.flatMap(c=>c.players.map(p=>({...p,club:c.name}))).sort((a,b)=>b.goals-a.goals).slice(0,15);return `<div class="hero"><div><div class="eyebrow">History & Statistics</div><h2>League Records</h2><p>Track the Golden Boot, champions and league history across seasons.</p></div></div><div class="two"><div class="card"><h3>Golden Boot Race</h3><div class="tablewrap"><table><tr><th>Player</th><th>Club</th><th class="num">Goals</th></tr>${goals.map(p=>`<tr><td>${p.name}</td><td>${p.club}</td><td class="num">${p.goals}</td></tr>`).join('')}</table></div></div><div><div class="card"><h3>Championship History</h3>${state.champions.length?state.champions.map(x=>`<div class="event">🏆 ${x.season}: ${x.club}</div>`).join(''):'<p class="muted">No completed seasons yet. Play through all 22 matchweeks to crown the first champion.</p>'}</div><div class="card"><h3>League Rules</h3><p>12 clubs · 22 matchweeks · 132 matches · home and away.</p><p>Win = 3 points · Draw = 1 point · Loss = 0 points.</p><p class="muted">Tie-breakers: goal difference, then goals scored, then alphabetical order for the prototype.</p></div></div></div>`}
-function settingsPage(){return `<div class="hero"><div><div class="eyebrow">Commissioner Control</div><h2>Save & Simulation Settings</h2><p>Manage the local simulation, export it for your developer or import a previous save.</p></div></div><div class="card"><h3>Game Status</h3><p>Season ${state.season} · ${state.week}/22 matchweeks · ${state.clubs.length} clubs · ${state.fixtures.flat().filter(x=>x.score).length} completed matches.</p><div class="actions"><button class="primary" onclick="exportSave()">Download Save JSON</button><button class="secondary" onclick="document.getElementById('importFile').click()">Import Save JSON</button><button class="danger" onclick="resetGame()">Reset Entire Simulation</button></div></div><div class="notice"><b>Prototype scope:</b> All teams, scores and player names are fictional. This edition has working standings, seeded match simulation, club tactics, facilities, budgets and multi-season saves. Player transfers, contracts, scouting, 2D matches, multiple divisions and cloud multiplayer are planned extensions, not active features.</div>`}
-function resetGame(){if(!confirm('Erase your current local simulation and start over? Export your save first if you want to keep it.'))return;state=createGame();selectedClub=0;viewWeek=0;save();setTab('Overview');notify('New game created')}
-function exportSave(){let blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`sanguinetti-season-${state.season}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000)}
-function importSave(e){let file=e.target.files[0];if(!file)return;let reader=new FileReader();reader.onload=()=>{try{let s=JSON.parse(reader.result);if(s.version!==1||s.clubs?.length!==12||s.fixtures?.length!==22)throw Error('Invalid save format');state=s;selectedClub=state.manager;viewWeek=Math.max(0,state.week-1);save();render();notify('Save imported successfully')}catch(err){alert('Unable to import: '+err.message)}};reader.readAsText(file);e.target.value=''}
-const tabs=['Overview','Fixtures','Clubs','Club HQ','Records','Settings'];function setTab(t){tab=t;render();window.scrollTo({top:0,behavior:'smooth'})}function render(){document.getElementById('topSeason').textContent=`SEASON ${state.season} · ROUND ${Math.min(22,state.week+1)}/22`;document.getElementById('nav').innerHTML=tabs.map(t=>`<button class="${tab===t?'active':''}" onclick="setTab('${t}')">${t}</button>`).join('');document.getElementById('content').innerHTML=({Overview:overview,Fixtures:fixturesPage,Clubs:clubsPage,'Club HQ':clubPage,Records:recordsPage,Settings:settingsPage})[tab]()}load();render();
-</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bennett Clippers — Boys Varsity Soccer 2026</title>
+<meta name="description" content="Live results, record and roster for James M. Bennett boys varsity soccer, fall 2026. 13-2 and into the state quarterfinal.">
+<meta name="theme-color" content="#0D0D0F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bennett Clippers Soccer — 13-2, State Quarterfinal">
+<meta property="og:description" content="Full results, roster and player stats from the Clippers' fall 2026 playoff run.">
+<meta property="og:image" content="og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230D0D0F'/><text x='16' y='23' font-size='19' font-family='sans-serif' font-weight='700' fill='%23D6162E' text-anchor='middle'>C</text></svg>">
+<style>
+  :root{
+    --ink:#0D0D0F;
+    --panel:#17171A;
+    --panel2:#121215;
+    --red:#D6162E;
+    --paper:#F4F2EF;
+    --mute:#9A979E;
+    --line:rgba(244,242,239,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+  body{background:var(--ink);color:var(--paper);font-family:'Barlow',sans-serif;line-height:1.5}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+  a{color:inherit}
+
+  header{
+    padding:40px 0 32px;
+    background:radial-gradient(1200px 420px at 50% -220px, rgba(214,22,46,.16), transparent 70%), var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-bottom:10px}
+  h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,9vw,84px);line-height:.92;letter-spacing:.01em}
+  h1 .red{color:var(--red)}
+  .sub{color:var(--mute);margin-top:10px;font-size:16px}
+
+  .board{
+    margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between;
+  }
+  .board .label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:800;margin-bottom:6px}
+  .board .match{font-size:21px;font-weight:700}
+  .board .meta{color:var(--mute);font-size:14px;margin-top:2px}
+  .clock{display:flex;gap:10px;text-align:center}
+  .clock .cell b{
+    display:block;font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;color:var(--red);
+    min-width:52px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 6px 4px;
+  }
+  .clock .cell span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600}
+
+  .gameday{
+    margin-top:12px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+    background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;
+  }
+  .btn.ghost{background:transparent;color:var(--paper);border:1px solid var(--line)}
+  .gd-note{font-size:13px;color:var(--mute);flex:1;min-width:200px}
+
+  .final{
+    margin-top:12px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;
+    padding:18px 22px;display:flex;flex-wrap:wrap;gap:26px;align-items:center;
+  }
+  .final .big{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:.9;color:var(--red)}
+  .final .big small{display:block;font-family:'Barlow',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-top:6px;font-weight:600}
+  .splits{display:flex;gap:22px;flex-wrap:wrap}
+  .splits div b{display:block;font-family:'Bebas Neue',sans-serif;font-size:28px;line-height:1}
+  .splits div span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600}
+
+  h2{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:.04em;margin:40px 0 4px}
+  .note{color:var(--mute);font-size:14px;margin-bottom:16px}
+
+  .controls{display:flex;flex-wrap:wrap;gap:10px;padding:4px 0 14px;align-items:center}
+  .chip{
+    background:transparent;color:var(--paper);border:1px solid var(--line);border-radius:999px;
+    padding:7px 18px;font-size:14px;font-weight:600;font-family:'Barlow',sans-serif;cursor:pointer;
+  }
+  .chip[aria-pressed="true"]{background:var(--red);color:#fff;border-color:var(--red)}
+  .chip:focus-visible,.btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+  .controls .spacer{flex:1}
+  .btn{
+    background:var(--red);color:#fff;border:none;border-radius:8px;text-decoration:none;
+    padding:9px 16px;font-size:14px;font-weight:700;font-family:'Barlow',sans-serif;cursor:pointer;display:inline-block;
+  }
+
+  .games{list-style:none;padding-bottom:10px}
+  .game{
+    display:grid;grid-template-columns:72px 1fr auto;gap:16px;align-items:center;
+    padding:14px 18px;border:1px solid var(--line);border-radius:12px;margin-bottom:9px;background:var(--panel2);
+  }
+  .game.playoff{border-color:rgba(214,22,46,.5)}
+  .game.next{border-color:var(--red);box-shadow:0 0 0 1px var(--red) inset}
+  .date{font-family:'Bebas Neue',sans-serif;font-size:28px;line-height:1}
+  .date small{display:block;font-family:'Barlow',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:3px}
+  .opp{font-size:17px;font-weight:600}
+  .venue{font-size:13px;color:var(--mute);margin-top:2px}
+  .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:4px;padding:2px 7px;margin-right:7px;vertical-align:1px}
+  .tag.home{background:var(--red);color:#fff}
+  .tag.away{background:transparent;color:var(--mute);border:1px solid var(--line)}
+  .tag.po{background:var(--paper);color:var(--ink)}
+  .score{text-align:right;font-size:17px;font-weight:700;white-space:nowrap}
+  .wl{display:inline-block;font-size:11px;font-weight:800;border-radius:4px;padding:2px 7px;margin-right:6px}
+  .wl.w{background:var(--red);color:#fff}
+  .wl.l{background:transparent;color:var(--mute);border:1px solid var(--line)}
+  .upcoming{font-size:14px;font-weight:700;color:var(--red);text-align:right;white-space:nowrap}
+
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th{text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:700;padding:0 10px 8px 0;border-bottom:1px solid var(--line)}
+  td{padding:10px 10px 10px 0;border-bottom:1px solid rgba(244,242,239,.07)}
+  th.r,td.r{text-align:right;padding-right:0;width:40px}
+  td.num{font-family:'Bebas Neue',sans-serif;font-size:21px;color:var(--mute);width:42px}
+  .pos{color:var(--mute);font-size:13px}
+  tr.link{cursor:pointer}
+  tr.link:hover td{background:rgba(244,242,239,.04)}
+
+  .lead{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+  .lead div{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .lead b{display:block;font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:var(--red)}
+  .lead span{font-size:14px;font-weight:600}
+  .lead em{display:block;font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-top:3px}
+
+  footer{border-top:1px solid var(--line);margin-top:48px;padding:20px 0 44px;color:var(--mute);font-size:13px}
+  @media(max-width:560px){
+    .game{grid-template-columns:58px 1fr auto;gap:12px;padding:13px 14px}
+    .opp{font-size:15px}
+    .board{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">James M. Bennett Senior High School</p>
+    <h1>Clippers <span class="red">Soccer</span></h1>
+    <p class="sub">Boys Varsity &middot; Fall 2026 &middot; 3A state playoffs</p>
+
+    <div class="board" id="board">
+      <div>
+        <div class="label" id="boardLabel">Next match</div>
+        <div class="match" id="boardMatch">—</div>
+        <div class="meta" id="boardMeta">—</div>
+      </div>
+      <div class="clock" id="clock" aria-label="Countdown to next match">
+        <div class="cell"><b id="d">0</b><span>Days</span></div>
+        <div class="cell"><b id="h">0</b><span>Hrs</span></div>
+        <div class="cell"><b id="m">0</b><span>Min</span></div>
+        <div class="cell"><b id="s">0</b><span>Sec</span></div>
+      </div>
+    </div>
+
+    <div class="gameday">
+      <a class="btn" href="https://gofan.co/event/7042256" target="_blank" rel="noopener">Buy tickets</a>
+      <a class="btn ghost" href="https://maps.google.com/?q=James+M+Bennett+High+School,+300+E+College+Ave,+Salisbury,+MD+21804" target="_blank" rel="noopener">Directions</a>
+      <span class="gd-note">Digital tickets only — no cash at the gate for state playoff games.</span>
+    </div>
+
+    <div class="final">
+      <div class="big">13&ndash;2<small>Record</small></div>
+      <div class="splits">
+        <div><b>47</b><span>Goals for</span></div>
+        <div><b>7</b><span>Goals against</span></div>
+        <div><b>9</b><span>Shutouts</span></div>
+        <div><b>3&ndash;0</b><span>Playoffs</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h2>Results</h2>
+  <p class="note">Every match this season, including the playoff run.</p>
+
+  <div class="controls" role="group" aria-label="Filter results">
+    <button class="chip" aria-pressed="true" data-filter="all">All</button>
+    <button class="chip" aria-pressed="false" data-filter="home">Home</button>
+    <button class="chip" aria-pressed="false" data-filter="away">Away</button>
+    <button class="chip" aria-pressed="false" data-filter="playoff">Playoffs</button>
+  </div>
+
+  <ul class="games" id="games"></ul>
+
+  <h2>Playoff run</h2>
+  <p class="note">Three straight wins, no goals conceded in the last two rounds.</p>
+  <div class="lead">
+    <div><b>2&ndash;1</b><span>Old Mill</span><em>Region quarterfinal</em></div>
+    <div><b>1&ndash;0</b><span>Stephen Decatur</span><em>Region semifinal</em></div>
+    <div><b>0&ndash;0</b><span>at Severna Park</span><em>Region final &middot; won 5&ndash;3 on PKs</em></div>
+  </div>
+
+  <h2>Season leaders</h2>
+  <p class="note">As recorded on MaxPreps, last updated Oct 21 — before the playoffs. The three postseason games are not yet reflected in any player's totals.</p>
+  <div class="lead">
+    <div><b>15</b><span>Manuel Zelaya</span><em>Goals</em></div>
+    <div><b>7</b><span>Jack Bowne</span><em>Goals</em></div>
+    <div><b>7</b><span>Kingston Griffiths</span><em>Goals</em></div>
+    <div><b>7</b><span>Grant Ziervogel</span><em>Assists</em></div>
+    <div><b>32</b><span>Manuel Zelaya</span><em>Points</em></div>
+    <div><b>18</b><span>Sam Wilhite</span><em>Saves</em></div>
+  </div>
+
+  <h2>Roster &amp; stats</h2>
+  <p class="note">
+    2026 varsity squad. GP / goals / assists / points as entered.
+    <a href="players.html" style="color:var(--red);font-weight:700">See full player breakdowns &rarr;</a>
+  </p>
+  <table>
+    <thead><tr><th>#</th><th>Player</th><th>Yr</th><th>Pos</th><th class="r">GP</th><th class="r">G</th><th class="r">A</th><th class="r">Pts</th></tr></thead>
+    <tbody id="roster"></tbody>
+  </table>
+
+  <div class="controls" style="padding-top:20px">
+    <a class="btn" href="players.html">Player breakdowns</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">Fan-run page — not affiliated with James M. Bennett High School or Wicomico County Public Schools. Results and statistics as published on MaxPreps. &middot; Go Clippers.</div>
+</footer>
+
+<script>
+const GAMES = [
+  {date:'9/4',  opp:'Washington',          home:true,  us:8, them:0},
+  {date:'9/9',  opp:'Pocomoke',            home:false, us:4, them:0},
+  {date:'9/14', opp:'Crisfield',           home:true,  us:8, them:0},
+  {date:'9/16', opp:"Queen Anne's County", home:true,  us:2, them:0},
+  {date:'9/23', opp:'Snow Hill',           home:false, us:2, them:1},
+  {date:'9/30', opp:'Wicomico',            home:true,  us:4, them:1},
+  {date:'10/5', opp:'Mardela',             home:false, us:5, them:0},
+  {date:'10/7', opp:'Kent Island',         home:true,  us:3, them:1},
+  {date:'10/9', opp:'Easton',              home:true,  us:1, them:0},
+  {date:'10/12',opp:'Stephen Decatur',     home:false, us:1, them:2, region:true},
+  {date:'10/15',opp:'Parkside',            home:true,  us:0, them:1},
+  {date:'10/19',opp:'North Caroline',      home:false, us:6, them:0},
+  {date:'10/28',opp:'Old Mill',            home:true,  us:2, them:1, playoff:'Region quarterfinal'},
+  {date:'10/30',opp:'Stephen Decatur',     home:true,  us:1, them:0, playoff:'Region semifinal'},
+  {date:'11/4', opp:'Severna Park',        home:false, us:0, them:0, playoff:'Region final', pks:true},
+  {date:'11/7', opp:'Tuscarora',           home:true,  playoff:'State quarterfinal',
+                kickoff:'2026-11-07T13:00:00-05:00', venue:'James M. Bennett HS &middot; 1:00 PM &middot; tickets on GoFan'},
+];
+
+const MON = {9:'SEP',10:'OCT',11:'NOV'};
+const list = document.getElementById('games');
+
+function render(filter){
+  list.innerHTML = '';
+  GAMES.forEach(g => {
+    if(filter==='home' && !g.home) return;
+    if(filter==='away' && g.home) return;
+    if(filter==='playoff' && !g.playoff) return;
+    const [mo,da] = g.date.split('/');
+    const played = g.us !== undefined;
+    const won = played && (g.us > g.them || g.pks);
+    const li = document.createElement('li');
+    li.className = 'game' + (g.playoff ? ' playoff' : '') + (played ? '' : ' next');
+    const right = played
+      ? `<div class="score"><span class="wl ${won?'w':'l'}">${won?'W':'L'}</span>${g.us}&ndash;${g.them}${g.pks?' <span class="pos">(PK)</span>':''}</div>`
+      : `<div class="upcoming">Saturday<br>1:00 PM</div>`;
+    li.innerHTML = `
+      <div class="date">${da}<small>${MON[mo]}</small></div>
+      <div>
+        <div class="opp">
+          <span class="tag ${g.home?'home':'away'}">${g.home?'Home':'Away'}</span>
+          ${g.playoff ? '<span class="tag po">Playoff</span>' : ''}
+          ${g.home?'':'@ '}${g.opp}
+        </div>
+        <div class="venue">${g.venue || g.playoff || (g.region ? 'Region match' : 'Regular season')}</div>
+      </div>
+      ${right}`;
+    list.appendChild(li);
+  });
+}
+render('all');
+
+document.querySelectorAll('.chip').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed','false'));
+    btn.setAttribute('aria-pressed','true');
+    render(btn.dataset.filter);
+  });
+});
+
+/* ---------- countdown ---------- */
+const NEXT = GAMES.find(g => g.kickoff);
+function tick(){
+  const label = document.getElementById('boardLabel');
+  const match = document.getElementById('boardMatch');
+  const meta  = document.getElementById('boardMeta');
+  const clock = document.getElementById('clock');
+  if(!NEXT){ label.textContent='Season complete'; match.textContent='Thanks for a great fall'; meta.textContent=''; clock.style.display='none'; return; }
+  const t = new Date(NEXT.kickoff).getTime();
+  const diff = t - Date.now();
+  match.textContent = (NEXT.home?'vs ':'at ') + NEXT.opp;
+  if(diff <= 0){
+    label.textContent = 'Match day';
+    meta.textContent = NEXT.playoff + ' · kicked off 1:00 PM · James M. Bennett HS';
+    clock.style.display='none';
+    return;
+  }
+  label.textContent = NEXT.playoff;
+  meta.textContent = 'Saturday, November 7 · 1:00 PM · James M. Bennett HS, 300 E College Ave';
+  const s = Math.floor(diff/1000);
+  document.getElementById('d').textContent = Math.floor(s/86400);
+  document.getElementById('h').textContent = Math.floor(s%86400/3600);
+  document.getElementById('m').textContent = Math.floor(s%3600/60);
+  document.getElementById('s').textContent = s%60;
+}
+tick(); setInterval(tick,1000);
+
+/* ---------- roster ---------- */
+const ROSTER = [
+  [1,'Sam Wilhite','Sr.','GK',  11, 0, 0, 0],
+  [3,'Chase Saulitis','Jr.','D', null,null,null,null],
+  [4,'Jaxson Thomas','Sr.','D',  null,null,null,null],
+  [5,'Grant Ziervogel','Sr.','D', 8, 3, 7, 13],
+  [6,'Micah Goad','So.','F',     10, 2, 2, 6],
+  [7,'Jack Bowne','Sr.','ST',    10, 7, 6, 20],
+  [8,'Kingston Griffiths','Sr.','FB', 10, 7, 6, 20],
+  [9,'Evan Perunko','So.','MF',   7, 4, 5, 13],
+  [10,'Camden Waters','Sr.','—',  7, 1, 4, 6],
+  [11,'Chase Johnston','Jr.','MF', null,null,null,null],
+  [15,'Olivier Ade','Sr.','MF',   null,null,null,null],
+  [17,'Scott Koch','Jr.','MF',    7, 1, 5, 7],
+  [19,'Manuel Zelaya','Sr.','—',  9, 15, 2, 32],
+  [21,'Owen Hare','Sr.','F',      2, 0, 2, 2],
+  [22,'Grant Wright','Sr.','D',   2, 0, 1, 1],
+  [24,'Caden Noelte','Jr.','—',   1, 1, 0, 2],
+  [25,'Tomas DiCarlo','Sr.','D',  1, 0, 1, 1],
+  [26,'Ryder Austin','So.','F',   7, 2, 6, 10],
+  [30,'Peter Gibrilla','Jr.','—', 3, 0, 3, 3],
+];
+const st = v => v === null ? '<span class="pos">—</span>' : v;
+document.getElementById('roster').innerHTML = ROSTER.map(r =>
+  `<tr class="link" onclick="location.href='players.html#p${r[0]}'">` +
+  `<td class="num">${r[0]}</td><td>${r[1]}</td><td class="pos">${r[2]}</td><td class="pos">${r[3]}</td>` +
+  `<td class="r">${st(r[4])}</td><td class="r">${st(r[5])}</td><td class="r">${st(r[6])}</td><td class="r"><b>${st(r[7])}</b></td></tr>`
+).join('');
+</script>
+</body>
+</html>

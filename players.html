@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clippers Soccer — Player Breakdowns</title>
+<meta name="description" content="Player-by-player statistical breakdowns for the 2026 James M. Bennett boys varsity soccer squad.">
+<meta name="theme-color" content="#0D0D0F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Clippers Soccer — Player Breakdowns">
+<meta property="og:description" content="Goals, assists, points and share of team output for every player on the 2026 squad.">
+<meta property="og:image" content="og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230D0D0F'/><text x='16' y='23' font-size='19' font-family='sans-serif' font-weight='700' fill='%23D6162E' text-anchor='middle'>C</text></svg>">
+<style>
+  :root{
+    --ink:#0D0D0F;
+    --panel:#17171A;
+    --panel2:#121215;
+    --red:#D6162E;
+    --paper:#F4F2EF;
+    --mute:#9A979E;
+    --line:rgba(244,242,239,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--paper);font-family:'Barlow',sans-serif;line-height:1.5}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+  a{color:var(--red)}
+
+  header{
+    padding:36px 0 28px;
+    background:radial-gradient(1100px 380px at 50% -200px, rgba(214,22,46,.14), transparent 70%), var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .back{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;text-decoration:none;display:inline-block;margin-bottom:14px}
+  h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,7.5vw,64px);line-height:.95}
+  h1 .red{color:var(--red)}
+  .sub{color:var(--mute);margin-top:8px;font-size:16px}
+
+  .coverage{
+    margin-top:22px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--red);
+    border-radius:10px;padding:14px 18px;font-size:14px;color:var(--mute);
+  }
+  .coverage b{color:var(--paper)}
+
+  .controls{display:flex;flex-wrap:wrap;gap:9px;padding:26px 0 18px}
+  .chip{
+    background:transparent;color:var(--paper);border:1px solid var(--line);border-radius:999px;
+    padding:7px 16px;font-size:14px;font-weight:600;font-family:'Barlow',sans-serif;cursor:pointer;
+  }
+  .chip[aria-pressed="true"]{background:var(--red);color:#fff;border-color:var(--red)}
+  .chip:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+
+  .cards{display:grid;gap:12px;padding-bottom:50px}
+  .card{
+    background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;
+    scroll-margin-top:16px;
+  }
+  .card:target{border-color:var(--red);box-shadow:0 0 0 1px var(--red) inset}
+  .card.nodata{opacity:.72}
+
+  .top{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+  .jersey{font-family:'Bebas Neue',sans-serif;font-size:38px;line-height:1;color:var(--red);min-width:40px}
+  .who h3{font-size:19px;font-weight:700;line-height:1.2}
+  .who p{font-size:13px;color:var(--mute);margin-top:1px}
+  .rank{
+    margin-left:auto;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
+    background:var(--paper);color:var(--ink);border-radius:4px;padding:3px 8px;align-self:center;
+  }
+  .rank.gk{background:transparent;color:var(--mute);border:1px solid var(--line)}
+
+  .line{display:flex;gap:20px;flex-wrap:wrap;margin:16px 0 4px}
+  .line div b{display:block;font-family:'Bebas Neue',sans-serif;font-size:26px;line-height:1}
+  .line div span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:700}
+  .line div.hi b{color:var(--red)}
+
+  .bars{margin:14px 0 2px;display:grid;gap:7px}
+  .bar{display:grid;grid-template-columns:78px 1fr 46px;gap:10px;align-items:center;font-size:11px}
+  .bar .lab{letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:700}
+  .bar .track{display:block;width:100%;height:7px;background:rgba(244,242,239,.09);border-radius:4px;overflow:hidden}
+  .bar .fill{display:block;height:7px;background:var(--red);border-radius:4px}
+  .bar .val{text-align:right;font-weight:700;font-size:12px}
+
+  .read{font-size:14.5px;color:#D6D3D8;margin-top:13px;padding-top:13px;border-top:1px solid rgba(244,242,239,.08)}
+
+  footer{border-top:1px solid var(--line);padding:20px 0 44px;color:var(--mute);font-size:13px}
+  @media(max-width:560px){
+    .line{gap:14px}
+    .bar{grid-template-columns:66px 1fr 42px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="back" href="index.html">&larr; Schedule &amp; results</a>
+    <h1>Player <span class="red">Breakdowns</span></h1>
+    <p class="sub">2026 Boys Varsity &middot; 19 players &middot; sorted by points</p>
+
+    <div class="coverage">
+      <b>About this data.</b> Statistics were last entered on Oct 21, covering the first 12 of
+      Bennett's 15 matches — <b>none of the three playoff games are included</b>, so every
+      player's totals here undercount the postseason. Shares are calculated against the recorded
+      totals of 43 goals and 50 assists, not the full-season 47 goals. Four players have no
+      statistics entered at all; that reflects the record-keeping, not their contribution.
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="controls" role="group" aria-label="Filter players">
+    <button class="chip" aria-pressed="true" data-f="all">All 19</button>
+    <button class="chip" aria-pressed="false" data-f="scorers">Scorers</button>
+    <button class="chip" aria-pressed="false" data-f="creators">Creators</button>
+    <button class="chip" aria-pressed="false" data-f="seniors">Seniors</button>
+    <button class="chip" aria-pressed="false" data-f="returning">Returning</button>
+  </div>
+
+  <div class="cards" id="cards"></div>
+</main>
+
+<footer>
+  <div class="wrap">Fan-run page — not affiliated with James M. Bennett High School or Wicomico County Public Schools. Statistics as published on MaxPreps, last updated Oct 21, 2026. &middot; Go Clippers.</div>
+</footer>
+
+<script>
+const TEAM_G = 43, TEAM_A = 50;
+
+/* num, name, year, pos, GP, G, A, Pts, reading */
+const P = [
+ {n:19,name:'Manuel Zelaya',yr:'Sr.',pos:'Forward',gp:9,g:15,a:2,p:32,
+  read:"The focal point of the attack. His 15 goals are 35% of everything Bennett scored in recorded matches — more than double any teammate — at 1.7 per appearance. He did it while missing three of the twelve recorded games, which makes the volume more striking, not less."},
+ {n:7,name:'Jack Bowne',yr:'Sr.',pos:'Striker',gp:10,g:7,a:6,p:20,
+  read:"An even split between finishing and creating: 7 goals, 6 assists. Joint-highest appearance count on the squad at 10, and the second-most combined attacking contributions. A striker who didn't need to be the only outlet to be effective."},
+ {n:8,name:'Kingston Griffiths',yr:'Sr.',pos:'Fullback',gp:10,g:7,a:6,p:20,
+  read:"The same line as the starting striker — 7 goals, 6 assists, 20 points — produced from fullback. Thirteen combined goals and assists is tied for second on the team, and it's an unusual return from a defensive position. Joint-highest appearance count at 10."},
+ {n:5,name:'Grant Ziervogel',yr:'Sr.',pos:'Defender',gp:8,g:3,a:7,p:13,
+  read:"Leads the team in assists outright with 7 — 14% of everything Bennett created — and added 3 goals from the back. More creator than finisher, and the highest assist rate on the squad at 0.9 per appearance."},
+ {n:9,name:'Evan Perunko',yr:'So.',pos:'Midfield',gp:7,g:4,a:5,p:13,
+  read:"The most productive underclassman. Matched Ziervogel's 13 points in one fewer appearance, at a higher rate per game (1.9). Balanced output — 4 goals, 5 assists — from a sophomore with two seasons still ahead."},
+ {n:26,name:'Ryder Austin',yr:'So.',pos:'Forward',gp:7,g:2,a:6,p:10,
+  read:"Six assists in seven appearances, matching Ziervogel's rate of roughly 0.9 per match. More provider than scorer so far, and a sophomore — the assist volume at this age is the notable part."},
+ {n:17,name:'Scott Koch',yr:'Jr.',pos:'Midfield',gp:7,g:1,a:5,p:7,
+  read:"Five assists from seven appearances against a single goal — a supplier rather than a scorer. Returns next season as a senior."},
+ {n:6,name:'Micah Goad',yr:'So.',pos:'Forward',gp:10,g:2,a:2,p:6,
+  read:"Joint-highest appearance count at 10, with modest end product: 2 goals and 2 assists. A consistent presence in the side rather than a primary attacking outlet. Sophomore."},
+ {n:10,name:'Camden Waters',yr:'Sr.',pos:'Outfield',gp:7,g:1,a:4,p:6,
+  read:"Four assists and a goal across seven appearances. Contributed in the build-up more often than at the finish."},
+ {n:30,name:'Peter Gibrilla',yr:'Jr.',pos:'Outfield',gp:3,g:0,a:3,p:3,
+  read:"Three assists in three appearances — a contribution in every recorded game he featured in, albeit on a small sample. Returns next season."},
+ {n:21,name:'Owen Hare',yr:'Sr.',pos:'Forward',gp:2,g:0,a:2,p:2,
+  read:"Two assists from two recorded appearances. Limited minutes, efficient return."},
+ {n:24,name:'Caden Noelte',yr:'Jr.',pos:'Outfield',gp:1,g:1,a:0,p:2,
+  read:"Scored in his only recorded appearance of the season. Returns next year."},
+ {n:22,name:'Grant Wright',yr:'Sr.',pos:'Defender',gp:2,g:0,a:1,p:1,
+  read:"An assist across two recorded appearances."},
+ {n:25,name:'Tomas DiCarlo',yr:'Sr.',pos:'Defender',gp:1,g:0,a:1,p:1,
+  read:"An assist in his only recorded appearance."},
+];
+
+const GK = {n:1,name:'Sam Wilhite',yr:'Sr.',pos:'Goalkeeper',gp:11,saves:18,so:2,
+  read:"Started 11 of the 12 recorded matches. The keeper's entered data is clearly incomplete — it logs 18 saves but only 2 shots on target against, and 80 total minutes across 11 appearances, which can't be right. What the match results do show is a defence that conceded 7 goals in 15 games and kept 9 clean sheets, including both of the last two playoff rounds."};
+
+const NODATA = [
+  {n:3,name:'Chase Saulitis',yr:'Jr.',pos:'Defender'},
+  {n:4,name:'Jaxson Thomas',yr:'Sr.',pos:'Defender'},
+  {n:11,name:'Chase Johnston',yr:'Jr.',pos:'Midfield'},
+  {n:15,name:'Olivier Ade',yr:'Sr.',pos:'Midfield'},
+];
+
+const pct = (v,t) => t ? (100*v/t) : 0;
+const f1  = v => v.toFixed(1);
+
+function bar(label, value, display, max){
+  return `<div class="bar">
+    <span class="lab">${label}</span>
+    <span class="track"><span class="fill" style="width:${Math.max(1.5, 100*value/max)}%"></span></span>
+    <span class="val">${display}</span>
+  </div>`;
+}
+
+function card(p, rank){
+  const gShare = pct(p.g, TEAM_G), aShare = pct(p.a, TEAM_A);
+  const ppg = p.p / p.gp;
+  return `<article class="card" id="p${p.n}" data-pos="${p.pos}" data-yr="${p.yr}" data-g="${p.g}" data-a="${p.a}">
+    <div class="top">
+      <div class="jersey">${p.n}</div>
+      <div class="who"><h3>${p.name}</h3><p>${p.yr} &middot; ${p.pos}</p></div>
+      <div class="rank">#${rank} in points</div>
+    </div>
+    <div class="line">
+      <div><b>${p.gp}</b><span>Games</span></div>
+      <div><b>${p.g}</b><span>Goals</span></div>
+      <div><b>${p.a}</b><span>Assists</span></div>
+      <div class="hi"><b>${p.p}</b><span>Points</span></div>
+      <div><b>${ppg.toFixed(1)}</b><span>Pts / game</span></div>
+    </div>
+    <div class="bars">
+      ${bar('Team goals', gShare, f1(gShare)+'%', 35)}
+      ${bar('Team assists', aShare, f1(aShare)+'%', 35)}
+    </div>
+    <p class="read">${p.read}</p>
+  </article>`;
+}
+
+function gkCard(k){
+  return `<article class="card" id="p${k.n}" data-pos="${k.pos}" data-yr="${k.yr}" data-g="0" data-a="0">
+    <div class="top">
+      <div class="jersey">${k.n}</div>
+      <div class="who"><h3>${k.name}</h3><p>${k.yr} &middot; ${k.pos}</p></div>
+      <div class="rank gk">Goalkeeper</div>
+    </div>
+    <div class="line">
+      <div><b>${k.gp}</b><span>Games</span></div>
+      <div class="hi"><b>${k.saves}</b><span>Saves</span></div>
+      <div><b>9</b><span>Team shutouts</span></div>
+      <div><b>7</b><span>Goals against</span></div>
+    </div>
+    <p class="read">${k.read}</p>
+  </article>`;
+}
+
+function blankCard(p){
+  return `<article class="card nodata" id="p${p.n}" data-pos="${p.pos}" data-yr="${p.yr}" data-g="0" data-a="0">
+    <div class="top">
+      <div class="jersey">${p.n}</div>
+      <div class="who"><h3>${p.name}</h3><p>${p.yr} &middot; ${p.pos}</p></div>
+      <div class="rank gk">No stats entered</div>
+    </div>
+    <p class="read">No statistics were entered for this player in 2026. On a squad where the
+    coaching staff logged 12 of 15 matches, an empty line reflects the record-keeping rather
+    than the season.</p>
+  </article>`;
+}
+
+const sorted = P.slice().sort((a,b) => b.p - a.p || b.g - a.g);
+document.getElementById('cards').innerHTML =
+  sorted.map((p,i) => card(p, i+1)).join('') + gkCard(GK) + NODATA.map(blankCard).join('');
+
+document.querySelectorAll('.chip').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed','false'));
+    btn.setAttribute('aria-pressed','true');
+    const f = btn.dataset.f;
+    document.querySelectorAll('.card').forEach(c => {
+      const g = +c.dataset.g, a = +c.dataset.a, yr = c.dataset.yr;
+      let show = true;
+      if(f === 'scorers')   show = g > 0;
+      if(f === 'creators')  show = a > 0;
+      if(f === 'seniors')   show = yr === 'Sr.';
+      if(f === 'returning') show = yr !== 'Sr.';
+      c.style.display = show ? '' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>
